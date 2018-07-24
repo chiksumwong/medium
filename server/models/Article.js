@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+
 let ArticleSchema = new mongoose.Schema(
     {
         text: String,
@@ -21,6 +22,8 @@ let ArticleSchema = new mongoose.Schema(
         ]
     }
 );
+
+
 ArticleSchema.methods.clap = function() {
     this.claps++
     return this.save()
@@ -38,4 +41,6 @@ ArticleSchema.methods.getUserArticle = function (_id) {
         return article
     })
 }
+
+
 module.exports = mongoose.model('Article', ArticleSchema)

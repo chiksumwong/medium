@@ -4,6 +4,8 @@ const fs = require('fs')
 const cloudinary = require('cloudinary')
 /* Note Cloudinary is an Image/Video service which handles media (Images, Videos) sharing seamlessly. */ 
 
+/* We will use it to upload our article feature image. They will host the images for us and use their image url to display our images on our frontend. */
+
 module.exports = {
     addArticle: (req, res, next) => {
         let { text, title, claps, description } = req.body

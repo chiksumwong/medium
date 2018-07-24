@@ -1,6 +1,7 @@
 const articlecontroller = require('./../controllers/article.ctrl')
 const multipart = require('connect-multiparty')
 const multipartWare = multipart()
+
 module.exports = (router) => {
     /**
      * get all articles
