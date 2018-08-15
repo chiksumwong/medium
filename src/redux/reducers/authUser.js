@@ -3,6 +3,7 @@ const initialState = {
     isAuth: false,
     profile: {}
 }
+
 export default (state = initialState, action) => {
     switch (action.type) {
         case 'SET_USER':

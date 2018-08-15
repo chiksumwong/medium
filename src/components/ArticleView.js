@@ -7,12 +7,16 @@ import {
 } from './../redux/actions/actions'
 import PropTypes from 'prop-types'
 import FollowButton from './FollowButton'
+
+
 const mapStateToProps = state => {
     return {
         _article: state.articles.article,
         user: state.authUser.user    
     }
 }
+
+
 class ArticleView extends Component {
     componentDidMount() {
         document.body.className = 'posts show'
@@ -154,9 +158,13 @@ class ArticleView extends Component {
         );
     }
 }
+
+
 ArticleView.propTypes = {
     params: PropTypes.object.isRequired
 }
+
+
 export default connect(mapStateToProps, { 
     getArticle,
     clap,

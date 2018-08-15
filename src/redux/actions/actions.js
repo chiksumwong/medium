@@ -1,6 +1,8 @@
 import axios from 'axios'
 //const url = "http://localhost:5000/api/"
 const url = process.env.NODE_ENV === 'production' ? "/api/" : "http://localhost:5000/api/"
+
+
 export function loadArticles () {
     return (dispatch) => {
         axios.get(`${url}articles`)
@@ -12,11 +14,13 @@ export function loadArticles () {
         })
     }
 }
+
 export function getUser (_id) {
     return axios.get(`${url}user/${_id}`).then((res)=>{
         return res.data
     }).catch(err=>console.log(err))
 }
+
 export function getUserProfile (_id) {
     return (dispatch) => {
         axios.get(`${url}user/profile/${_id}`).then((res)=>{
@@ -25,6 +29,7 @@ export function getUserProfile (_id) {
         }).catch(err=>console.log(err))
     }
 }
+
 export function getArticle (article_id) {
     return (dispatch) => {
         axios.get(`${url}article/${article_id}`)
@@ -34,11 +39,13 @@ export function getArticle (article_id) {
         }).catch((err) => console.log(err))
     }
 }
+
 // article_id, author_id, comment
 export function comment () {
     return (dispatch) => {
     }
 }
+
 //req.body.article_id
 export function clap (article_id) {
     return (dispatch) => {
@@ -47,6 +54,7 @@ export function clap (article_id) {
         }).catch((err)=>console.log(err))
     }
 }
+
 //id, user_id
 export function follow (id, user_id) {
     return (dispatch) => {
@@ -55,6 +63,7 @@ export function follow (id, user_id) {
         }).catch((err)=>console.log(err))        
     }
 }
+
 export function SignInUser (user_data) {
     return (dispatch) => {
         axios.post(`${url}user`,user_data).then((res)=>{
@@ -64,11 +73,13 @@ export function SignInUser (user_data) {
         }).catch((err)=>console.log(err))
     }
 }
+
 export function toggleClose() {
     return (dispatch) => {
         dispatch({type: 'TOGGLE_MODAL', modalMode: false})
     }
 }
+
 export function toggleOpen() {
     return (dispatch) => {
         dispatch({type: 'TOGGLE_MODAL', modalMode: true})        

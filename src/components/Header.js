@@ -42,15 +42,21 @@ class Header extends Component {
             );
     }
 }
+
+
 const mapStateToProps = state => {
     return {
         user: state.authUser.user,
         isAuth: state.authUser.isAuth
     }    
 }
+
+
 const mapDispatchToProps = dispatch => {
     return {
         openSignInWith: ()=> { dispatch({type: 'TOGGLE_MODAL', modalMode: true}) }
     }
 }
+
+
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
