@@ -31,4 +31,6 @@ UserSchema.methods.follow = function (user_id) {
 UserSchema.methods.addFollower = function (fs) {
     this.followers.push(fs)        
 }
+
+
 module.exports = mongoose.model('User', UserSchema)

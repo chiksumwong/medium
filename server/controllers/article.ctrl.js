@@ -1,6 +1,4 @@
 const Article = require('./../models/Article')
-const User = require('./../models/User')
-const fs = require('fs')
 const cloudinary = require('cloudinary')
 /* Note Cloudinary is an Image/Video service which handles media (Images, Videos) sharing seamlessly. */ 
 

@@ -1,9 +1,11 @@
+// Import Models
 const User = require('./../models/User')
 const Article = require('./../models/Article')
 
+// Export Object
 module.exports = {
-    addUser: (req, res, next) => {
-        new User(req.body).save((err, newUser) => {
+    addUser: (req, res, next) => {//action
+        new User(req.body).save((err, newUser) => {//action
             if (err)
                 res.send(err)
             else if (!newUser)
@@ -13,6 +15,7 @@ module.exports = {
             next()
         });
     },
+
     getUser: (req, res, next) => {
         User.findById(req.params.id).then
         /*populate('following').exec*/((err, user)=> {
@@ -25,6 +28,7 @@ module.exports = {
             next()            
         })
     },
+
     /**
      * user_to_follow_id, user_id
      */
@@ -35,6 +39,7 @@ module.exports = {
             })
         }).catch(next)
     },
+
     getUserProfile: (req, res, next) => {
         User.findById(req.params.id).then
         ((_user) => {

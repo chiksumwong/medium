@@ -1,5 +1,4 @@
-// npm install
-/** require dependencies */
+/** require dependencies (By npm install) */
 const express = require("express")
 const mongoose = require('mongoose')
 const cors = require('cors')
@@ -8,10 +7,19 @@ const cloudinary = require('cloudinary')
 const bodyParser = require('body-parser')
 const helmet = require('helmet')
 
-const routes = require('./routes/')
-
-const app = express()
+// ExpressJS's Router Method
 const router = express.Router()
+const routes = require('./routes/index')
+
+// ExpressJS's Main Method
+const app = express()
+
+
+/** set up routes {API Endpoints} */
+// Put 'router' to routes/index.js
+routes(router)
+app.use('/api', router)
+
 
 /** configure cloudinary */
 cloudinary.config({
@@ -19,6 +27,7 @@ cloudinary.config({
     api_key: '392491259175392',
     api_secret: 'sf4RZBE0-YZ3EMWV0b6yKnElXGU'
 })
+
 
 /** connect to MongoDB datastore */
 const url = process.env.MONGODB_URI || "mongodb://localhost:27017/medium"
@@ -30,9 +39,6 @@ try {
     
 }
 
-/** set up routes {API Endpoints} */
-routes(router)
-app.use('/api', router)
 
 /** set up middlewares */
 app.use(cors())
