@@ -34,7 +34,7 @@ cloudinary.config({
 const db_url = "mongodb://localhost:27017/medium"
 try {
     mongoose.connect(db_url, {
-        //useMongoClient: true
+        useNewUrlParser: true
     })    
 } catch (error) {
     
