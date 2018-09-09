@@ -25,4 +25,5 @@ export default function (Conmponent) {
         }
     }
     return connect(mapStateToProps)(Authenticate)
+    //we tap into our app redux "store" using the "connect" function 
 }

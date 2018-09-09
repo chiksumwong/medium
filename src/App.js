@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom'
+
+/* Components */
 import Header from './components/Header';
 import Feed from './components/Feed'
 import Profile from './components/Profile'
 import ArticleView from './components/ArticleView'
 import Editor from './components/Editor'
-import requireAuthentication from './utils/requireAuth'
 import SignInWith from './components/SignInWith'
 
+/* User Authentication */
+import requireAuthentication from './utils/requireAuth'//src/utils/requireAuth.js
+
+/* Router */
 class App extends Component {
     render() {
         const pathname = window.location.pathname
