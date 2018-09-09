@@ -2,7 +2,9 @@ import axios from 'axios'
 //const url = "http://localhost:5000/api/"
 const url = process.env.NODE_ENV === 'production' ? "/api/" : "http://localhost:5000/api/"
 
-
+/* 
+* Article Actions 
+*/
 export function loadArticles () {
     return (dispatch) => {
         axios.get(`${url}articles`)
@@ -15,6 +17,23 @@ export function loadArticles () {
     }
 }
 
+export function getArticle (article_id) {
+    return (dispatch) => {
+        axios.get(`${url}article/${article_id}`)
+        .then((res) => {
+            let article = res.data
+            dispatch({type: 'VIEW_ARTICLE', article})
+        }).catch((err) => console.log(err))
+    }
+}
+/* End Article Actions */
+
+
+
+
+/* 
+* User Actions 
+*/
 export function getUser (_id) {
     return axios.get(`${url}user/${_id}`).then((res)=>{
         return res.data
@@ -29,16 +48,10 @@ export function getUserProfile (_id) {
         }).catch(err=>console.log(err))
     }
 }
+/* End User Actions */
 
-export function getArticle (article_id) {
-    return (dispatch) => {
-        axios.get(`${url}article/${article_id}`)
-        .then((res) => {
-            let article = res.data
-            dispatch({type: 'VIEW_ARTICLE', article})
-        }).catch((err) => console.log(err))
-    }
-}
+
+
 
 // article_id, author_id, comment
 export function comment () {
@@ -74,6 +87,12 @@ export function SignInUser (user_data) {
     }
 }
 
+
+
+
+/* 
+* Common Actions 
+*/
 export function toggleClose() {
     return (dispatch) => {
         dispatch({type: 'TOGGLE_MODAL', modalMode: false})
@@ -85,3 +104,4 @@ export function toggleOpen() {
         dispatch({type: 'TOGGLE_MODAL', modalMode: true})        
     }    
 }
+/* End Common Actions */
