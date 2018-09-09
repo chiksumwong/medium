@@ -30,9 +30,10 @@ cloudinary.config({
 
 
 /** connect to MongoDB datastore */
-const url = process.env.MONGODB_URI || "mongodb://localhost:27017/medium"
+// const url = process.env.MONGODB_URI || "mongodb://localhost:27017/medium"
+const db_url = "mongodb://localhost:27017/medium"
 try {
-    mongoose.connect(url, {
+    mongoose.connect(db_url, {
         //useMongoClient: true
     })    
 } catch (error) {
