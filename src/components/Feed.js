@@ -9,6 +9,8 @@ const mapStateToProps = state => {
         articles: state.articles.articles
     }
 }
+
+
 class Feed extends Component {
     componentWillReceiveProps(nextProps) {
         

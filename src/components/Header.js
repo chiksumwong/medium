@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 class Header extends Component {
     render() {
         return ( 
-            <div>
+<div>
     <div data-react-className="UserOverlay" data-react-props="{}">
         <div className="overlay overlay-hugeinc " data-reactroot=""><button className="overlay-close"><span className="glyphicon glyphicon-remove"></span></button>
             <nav className="users-overlay">
@@ -20,14 +20,16 @@ class Header extends Component {
 
     <nav data-behavior="animated-navbar" className="navbar navbar-default navbar-fixed-top is-inView">
         <div className="container-fluid col-md-10 col-md-offset-1">
+
             <div className="navbar-header">
                 <a className="navbar-brand" id="logo" href="/">
-                    <img alt="Stories" src="/assets/img/stories-logo.svg" height="40"/>
+                    <img alt="Stories" src="/assets/img/icon.png" height="40"/>
                 </a>
             </div>
-            <ul className="nav navbar-nav filter-links">
-                <li><a className="" href="/">Top stories</a></li>
-            </ul>
+
+            <dev className="nav navbar-nav filter-links">
+                <dev><a className="" href="/">Top stories</a></dev>
+            </dev>
 
             <div className="folding-nav">
                 <ul className="nav navbar-nav navbar-right">
