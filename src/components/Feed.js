@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
 import {
     loadArticles
 } from './../redux/actions/actions'
-import AsideFeed from './AsideFeed'
-const mapStateToProps = state => {
-    return {
-        articles: state.articles.articles
-    }
-}
 
+import AsideFeed from './AsideFeed'
 
 class Feed extends Component {
     componentWillReceiveProps(nextProps) {
@@ -21,7 +17,7 @@ class Feed extends Component {
     }
     
     render() {
-    const articles = this.props.articles.reverse().map((article)=>
+        const articles = this.props.articles.reverse().map((article)=>
                 <div className="post-panel">
                     <div className="post-metadata">
                         <img alt="" className="avatar-image" src={article.author.provider_pic} height="40" width="40"/>
@@ -59,6 +55,8 @@ class Feed extends Component {
                     </div>
                 </div>
             )
+
+
         return ( 
             <div>
                 <div className="container-fluid main-container">
@@ -73,4 +71,11 @@ class Feed extends Component {
         );
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        articles: state.articles.articles
+    }
+}
+
 export default connect(mapStateToProps, { loadArticles })(Feed);
