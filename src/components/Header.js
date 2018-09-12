@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import icon from'../assets/img/icon.png';
 
 class Header extends Component {
     render() {
@@ -23,7 +24,7 @@ class Header extends Component {
 
                         <div className="navbar-header">
                             <a className="navbar-brand" id="logo" href="/">
-                                <img alt="Stories" src="/assets/img/icon.png" height="40"/>
+                                <img alt="Stories" src={icon} height="40"/>
                             </a>
                         </div>
 
