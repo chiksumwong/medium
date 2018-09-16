@@ -1,17 +1,26 @@
+//React
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './assets/medium.css';
+
+//Redux
 import { Provider } from 'react-redux';
 
+//Router
 import { Switch, Route } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
 
-import App from './App.js';
-import registerServiceWorker from './registerServiceWorker';
 
+//For production
+// import registerServiceWorker from './registerServiceWorker';
+
+//store
 import { store, history } from './redux/store';
 
+//action
 import { getUser } from './redux/actions/actions'
+
+import './assets/medium.css';
+import App from './App.js';
 
 
 //User Auth
@@ -45,4 +54,7 @@ ReactDOM.render((
         </ConnectedRouter>
     </Provider>
 ), document.getElementById('root'));
-registerServiceWorker();
+
+
+//For production
+// registerServiceWorker();
