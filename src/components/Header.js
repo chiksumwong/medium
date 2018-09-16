@@ -1,21 +1,31 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+
+// Web Icon
 import icon from'../assets/img/icon.png';
 
 class Header extends Component {
     render() {
         return ( 
             <div>
+                
                 <div data-react-className="UserOverlay" data-react-props="{}">
-                    <div className="overlay overlay-hugeinc " data-reactroot=""><button className="overlay-close"><span className="glyphicon glyphicon-remove"></span></button>
+                    <div className="overlay overlay-hugeinc " data-reactroot="">
+                    
+                        <button className="overlay-close">
+                            <span className="glyphicon glyphicon-remove"></span>
+                        </button>
+                        
                         <nav className="users-overlay">
                             <h2 className="grayed-heading center"></h2>
                             <ul>
                                 <li className="pagination-button-group"></li>
                             </ul>
                         </nav>
+
                     </div>
                 </div>
+
 
                 <div data-behavior="progress-bar" className="progress-bar"></div>
 
@@ -41,6 +51,7 @@ class Header extends Component {
 
                     </div>
                 </nav>
+                
             </div>
             );
     }
@@ -61,5 +72,5 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-
+//Redux Connect Function
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
